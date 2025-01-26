@@ -15,6 +15,7 @@ public class Selector3x3 : MonoBehaviour
 
     public float cooldownDuration = 0.5f; // Duración del cooldown en segundos
     private float cooldownTimer = 0f; // Temporizador del cooldown
+ 
 
     private void Start()
     {
@@ -106,7 +107,7 @@ public class Selector3x3 : MonoBehaviour
         {
             selectedCell.ocupado = true;
             cooldownTimer = cooldownDuration; // Inicia el cooldown
-
+           selectedCell.gameObject.GetComponent<Gun_Generator>().GenerateTheGun();  
             // Actualiza visualmente el estado
             HighlightSelected();
         }
